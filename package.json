@@ -1,6 +1,6 @@
 {
   "name": "tailwind-super-rtl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "right to left utilities for tailwind 3",
   "main": "index.js",
   "license": "MIT",
