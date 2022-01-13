@@ -1,4 +1,3 @@
-// @ts-check
 const plugin = require('tailwindcss/plugin')
 
 const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
@@ -108,6 +107,12 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
         borderRightWidth: value,
       },
     }),
+  }, {
+    values: {
+      ...theme('spacing'),
+      auto: 'auto',
+    },
+  })
 })
 
 module.exports = rtlPlugin
