@@ -1,0 +1,2 @@
+# Tailwind Super RTL
+

@@ -1,0 +1,16 @@
+{
+  "name": "tailwind-super-rtl",
+  "version": "1.0.0",
+  "description": "rtl utilities for tailwind",
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "tailwindcss": "^3.0.13"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.0.0"
+  }
+}
