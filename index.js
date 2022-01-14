@@ -39,6 +39,30 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
         right: value,
       },
     }),
+    'border-s': value => ({
+      '.rtl &': {
+        borderRightWidth: value,
+      },
+      '.ltr &': {
+        borderLeftWidth: value,
+      },
+    }),
+    'border-e': value => ({
+      '.rtl &': {
+        borderLeftWidth: value,
+      },
+      '.ltr &': {
+        borderRightWidth: value,
+      },
+    }),
+  }, {
+    values: {
+      ...theme('spacing'),
+      auto: 'auto',
+    },
+  })
+
+  matchUtilities({
     'rounded-s': value => ({
       '.rtl &': {
         borderTopRightRadius: value,
@@ -91,27 +115,8 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
         borderBottomRightRadius: value,
       },
     }),
-    'border-s': value => ({
-      '.rtl &': {
-        borderRightWidth: value,
-      },
-      '.ltr &': {
-        borderLeftWidth: value,
-      },
-    }),
-    'border-e': value => ({
-      '.rtl &': {
-        borderLeftWidth: value,
-      },
-      '.ltr &': {
-        borderRightWidth: value,
-      },
-    }),
   }, {
-    values: {
-      ...theme('spacing'),
-      auto: 'auto',
-    },
+    values: theme('borderRadius'),
   })
 })
 
