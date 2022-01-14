@@ -39,22 +39,6 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
         right: value,
       },
     }),
-    'border-s': value => ({
-      '.rtl &': {
-        borderRightWidth: value,
-      },
-      '.ltr &': {
-        borderLeftWidth: value,
-      },
-    }),
-    'border-e': value => ({
-      '.rtl &': {
-        borderLeftWidth: value,
-      },
-      '.ltr &': {
-        borderRightWidth: value,
-      },
-    }),
   }, {
     values: {
       ...theme('spacing'),
@@ -117,6 +101,27 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
     }),
   }, {
     values: theme('borderRadius'),
+  })
+
+  matchUtilities({
+    'border-s': value => ({
+      '.rtl &': {
+        borderRightWidth: value,
+      },
+      '.ltr &': {
+        borderLeftWidth: value,
+      },
+    }),
+    'border-e': value => ({
+      '.rtl &': {
+        borderLeftWidth: value,
+      },
+      '.ltr &': {
+        borderRightWidth: value,
+      },
+    }),
+  }, {
+    values: theme('borderWidth'),
   })
 })
 
