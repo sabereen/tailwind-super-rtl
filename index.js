@@ -44,6 +44,7 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
       ...theme('spacing'),
       auto: 'auto',
     },
+    supportsNegativeValues: true,
   })
 
   matchUtilities({
