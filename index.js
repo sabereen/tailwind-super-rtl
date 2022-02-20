@@ -1,6 +1,8 @@
-const plugin = require('tailwindcss/plugin')
+const req = require
+/** @type { import('tailwindcss/plugin')['default'] } */
+const plugin = req('tailwindcss/plugin')
 
-const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
+const rtlPlugin = () => plugin.withOptions(options => ({ matchUtilities, theme, addUtilities, e }) => {
   // text-align
   addUtilities({
     '.text-start': {
@@ -204,6 +206,28 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
   }, {
     values: theme('borderWidth'),
   })
+
+  // border-colors
+  // matchUtilities({
+  //   'border-s': value => ({
+  //     '.rtl &': {
+  //       borderRightColor: value,
+  //     },
+  //     '.ltr &': {
+  //       borderLeftColor: value,
+  //     },
+  //   }),
+  //   'border-e': value => ({
+  //     '.rtl &': {
+  //       borderLeftColor: value,
+  //     },
+  //     '.ltr &': {
+  //       borderRightColor: value,
+  //     },
+  //   }),
+  // }, {
+  //   values: generateColors(e, theme('borderColor')),
+  // })
 })
 
 module.exports = rtlPlugin
