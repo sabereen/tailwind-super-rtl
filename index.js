@@ -1,6 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
+  // text-align
   addUtilities({
     '.text-start': {
       textAlign: 'start',
@@ -10,6 +11,83 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
     },
   })
 
+  // float
+  addUtilities({
+    '.float-start': {
+      '.rtl &': {
+        float: 'right',
+      },
+      '.ltr &': {
+        float: 'left',
+      },
+    },
+    '.float-end': {
+      '.rtl &': {
+        float: 'left',
+      },
+      '.ltr &': {
+        float: 'right',
+      },
+    },
+    '.clear-start': {
+      '.rtl &': {
+        clear: 'right',
+      },
+      '.ltr &': {
+        clear: 'left',
+      },
+    },
+    '.clear-end': {
+      '.rtl &': {
+        clear: 'left',
+      },
+      '.ltr &': {
+        clear: 'right',
+      },
+    },
+  })
+
+  // space-x
+  addUtilities({
+    '.space-x-start': {
+      '.rtl &': {
+        '--tw-space-x-reverse': '1',
+      },
+      '.ltr &': {
+        '--tw-space-x-reverse': '0',
+      },
+    },
+    '.space-x-end': {
+      '.rtl &': {
+        '--tw-space-x-reverse': '0',
+      },
+      '.ltr &': {
+        '--tw-space-x-reverse': '1',
+      },
+    },
+  })
+
+  // divide-x
+  addUtilities({
+    '.divide-x-start': {
+      '.rtl &': {
+        '--tw-divide-x-reverse': '1',
+      },
+      '.ltr &': {
+        '--tw-divide-x-reverse': '0',
+      },
+    },
+    '.divide-x-end': {
+      '.rtl &': {
+        '--tw-divide-x-reverse': '0',
+      },
+      '.ltr &': {
+        '--tw-divide-x-reverse': '1',
+      },
+    },
+  })
+
+  // spacing
   matchUtilities({
     ms: value => ({
       marginInlineStart: value,
@@ -47,6 +125,7 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
     supportsNegativeValues: true,
   })
 
+  // border-radius
   matchUtilities({
     'rounded-s': value => ({
       '.rtl &': {
@@ -104,6 +183,7 @@ const rtlPlugin = () => plugin(({ matchUtilities, theme, addUtilities }) => {
     values: theme('borderRadius'),
   })
 
+  // border-width
   matchUtilities({
     'border-s': value => ({
       '.rtl &': {
